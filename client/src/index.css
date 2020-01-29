@@ -76,7 +76,11 @@ body {
   text-align: center;
 }
 
-.edit-movie {
-  display: flex;
-  justify-content: center;
+.edit-button {
+  padding: 5px 10px;
+  background-color: lightskyblue;
+}
+.delete-button {
+  padding: 5px 10px;
+  background-color: lightcoral;
 }

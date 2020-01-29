@@ -35,36 +35,39 @@ const EditMovie = props => {
   };
 
   return (
-    <div className="edit-movie">
-      <form onSubmit={handleSubmit}>
-        <h1>edit movie</h1>
-        <input
-          placeholder="Movie Title"
-          name="title"
-          value={movie.title}
-          onChange={handleChange}
-        />
+    <form onSubmit={handleSubmit} className="movie-card save-wrapper">
+      <input
+        placeholder="Movie Title"
+        name="title"
+        value={movie.title}
+        onChange={handleChange}
+      />
+      <div className="movie-director">
         <input
           placeholder="Director"
           name="director"
           value={movie.director}
           onChange={handleChange}
         />
+      </div>
+      <div className="movie-metascore">
+        Metascore:{" "}
         <input
           placeholder="Meta Score"
           name="metascore"
+          type="number"
           value={movie.metascore}
           onChange={handleChange}
         />
-        <input
-          placeholder="Stars,"
-          name="stars"
-          value={movie.stars}
-          onChange={handleChange}
-        />
-        <button>update</button>
-      </form>
-    </div>
+      </div>
+      <input
+        placeholder="Stars,"
+        name="stars"
+        value={movie.stars}
+        onChange={handleChange}
+      />
+      <button>update</button>
+    </form>
   );
 };
 

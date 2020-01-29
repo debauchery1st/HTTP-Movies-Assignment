@@ -5,7 +5,9 @@ export default class Movie extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      movie: null
+      movie: null,
+      confirmDelete: false,
+      alertDeleteMessage: "WARNING... CLICK AGAIN TO DELETE FROM DATABASE."
     };
   }
 
@@ -33,8 +35,22 @@ export default class Movie extends React.Component {
 
   editMovie = () => {
     this.props.history.push(`/update-movie/${this.state.movie.id}`);
-    // const addToSavedList = this.props.addToSavedList;
-    // addToSavedList(this.state.movie);
+  };
+
+  deleteMovie = () => {
+    if (!this.state.confirmDelete) {
+      this.setState({
+        ...this.state,
+        confirmDelete: true,
+        alertMessage: "warning, press again to delete"
+      });
+      return;
+    }
+    this.state.movie &&
+      axios
+        .delete(`http://localhost:5000/api/movies/${this.state.movie.id}`)
+        .then(() => this.props.history.push("/"))
+        .catch(err => console.log(err));
   };
 
   render() {
@@ -50,6 +66,14 @@ export default class Movie extends React.Component {
         </div>
         <div className="edit-button" onClick={this.editMovie}>
           Edit
+        </div>
+        <div className="delete-button" onClick={this.deleteMovie}>
+          {this.state.alertMessage ? (
+            <p>{this.state.alertDeleteMessage}</p>
+          ) : (
+            ""
+          )}
+          Delete
         </div>
       </div>
     );
