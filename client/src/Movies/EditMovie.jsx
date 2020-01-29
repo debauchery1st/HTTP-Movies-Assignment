@@ -25,8 +25,13 @@ const EditMovie = props => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    props.updateMovie(movie, console.log, console.log);
-    props.history.push(`/movies/${movie.id}`);
+    const payload = movie.stars.includes(",")
+      ? { ...movie, stars: movie.stars.split(",") }
+      : movie;
+    axios
+      .put(`http://localhost:5000/api/movies/${id}`, payload)
+      .then(res => props.history.push("/"))
+      .catch(err => console.log(err.response));
   };
 
   return (

@@ -3,20 +3,17 @@ import axios from "axios";
 export const crudClient = function(baseURL) {
   return {
     get: function(path, cbThen, cbErr) {
-      axios
-        .get(`${baseURL}${path}`)
+      return new axios.get(`${baseURL}${path}`)
         .then(res => cbThen(res))
         .catch(err => cbErr(err));
     },
     put: function(path, cbThen, cbErr) {
-      axios
-        .put(`${baseURL}${path}`)
+      return new axios.put(`${baseURL}${path}`)
         .then(res => cbThen(res))
         .catch(err => cbErr(err));
     },
     delete: function(path, cbThen, cbErr) {
-      axios
-        .delete(`${baseURL}${path}`)
+      return new axios.delete(`${baseURL}${path}`)
         .then(res => cbThen(res))
         .catch(err => cbErr(err));
     }
