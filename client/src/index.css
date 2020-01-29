@@ -75,3 +75,8 @@ body {
   color: red;
   text-align: center;
 }
+
+.edit-movie {
+  display: flex;
+  justify-content: center;
+}
