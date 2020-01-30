@@ -16,7 +16,7 @@ const Poster = props => {
     "https://placekitten.com/300/445";
   useEffect(() => {
     title &&
-      !meta.Poster.length > 0 &&
+      !meta.Poster > 0 &&
       axios
         .get(`${omdbUrl}&t=${title}`)
         .then(res => {
