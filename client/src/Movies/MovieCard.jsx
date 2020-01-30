@@ -3,16 +3,13 @@ import Poster from "./Poster";
 
 const MovieCard = props => {
   const [meta, setmeta] = useState({ ...props.movie });
-  const { title, director, metascore, stars } = meta;
-
-  const updateMeta = newMeta => {
+  const update = newMeta => {
+    console.log("importing...", newMeta);
     setmeta({ ...meta, ...newMeta });
   };
-  const MoviePoster = () => <Poster title={title} updater={updateMeta} />;
   return (
-    //className="movie-card save-wrapper"
     <div className="movie-card save-wrapper movie-poster">
-      <MoviePoster />
+      <Poster meta={meta} update={update} />
     </div>
   );
 };
