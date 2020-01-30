@@ -3,3 +3,4 @@
 .vscode
 */yarn.lock
 */node_modules/*
+*/mykey.js*

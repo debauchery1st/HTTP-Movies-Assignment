@@ -40,7 +40,6 @@ const AddMovie = props => {
         />
       </div>
       <div className="movie-metascore">
-        Metascore:{" "}
         <input
           placeholder="Meta Score"
           name="metascore"

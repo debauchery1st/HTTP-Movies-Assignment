@@ -94,3 +94,12 @@ a {
   padding: 5px 10px;
   text-align: center;
 }
+
+.movie-poster {
+  display: flex;
+  padding: 0.5rem;
+}
+
+.movie-poster-image {
+  margin: 1rem;
+}

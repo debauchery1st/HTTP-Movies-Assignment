@@ -36,13 +36,17 @@ const EditMovie = props => {
 
   return (
     <form onSubmit={handleSubmit} className="movie-card save-wrapper">
-      <input
-        placeholder="Movie Title"
-        name="title"
-        value={movie.title}
-        onChange={handleChange}
-      />
-      <div className="movie-director">
+      <div>
+        Title{" "}
+        <input
+          placeholder="Movie Title"
+          name="title"
+          value={movie.title}
+          onChange={handleChange}
+        />
+      </div>
+      <div>
+        Director{" "}
         <input
           placeholder="Director"
           name="director"
@@ -50,8 +54,8 @@ const EditMovie = props => {
           onChange={handleChange}
         />
       </div>
-      <div className="movie-metascore">
-        Metascore:{" "}
+      <div>
+        Metascore{" "}
         <input
           placeholder="Meta Score"
           name="metascore"
@@ -60,12 +64,15 @@ const EditMovie = props => {
           onChange={handleChange}
         />
       </div>
-      <input
-        placeholder="Stars,"
-        name="stars"
-        value={movie.stars}
-        onChange={handleChange}
-      />
+      <div>
+        Stars{" "}
+        <input
+          placeholder="Star-light, star, ..."
+          name="stars"
+          value={movie.stars}
+          onChange={handleChange}
+        />
+      </div>
       <button>update</button>
     </form>
   );
