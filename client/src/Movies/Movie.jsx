@@ -68,11 +68,7 @@ export default class Movie extends React.Component {
           Edit
         </div>
         <div className="delete-button" onClick={this.deleteMovie}>
-          {this.state.alertMessage ? (
-            <p>{this.state.alertDeleteMessage}</p>
-          ) : (
-            ""
-          )}
+          {this.state.alertMessage && <p>{this.state.alertDeleteMessage}</p>}
           Delete
         </div>
       </div>
