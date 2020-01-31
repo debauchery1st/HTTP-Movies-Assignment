@@ -75,3 +75,31 @@ body {
   color: red;
   text-align: center;
 }
+
+.edit-button {
+  padding: 5px 10px;
+  background-color: lightskyblue;
+}
+.delete-button {
+  padding: 5px 10px;
+  background-color: lightcoral;
+}
+a {
+  text-decoration: none;
+}
+
+.new-button {
+  color: white;
+  background-color: green;
+  padding: 5px 10px;
+  text-align: center;
+}
+
+.movie-poster {
+  display: flex;
+  padding: 0.5rem;
+}
+
+.movie-poster-image {
+  margin: 1rem;
+}
